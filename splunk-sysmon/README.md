@@ -2,6 +2,7 @@ This directory contains files for starting a windows sandbox VM that installs th
 The splunk forwarder is configured to forward the powershell logs and sysmon logs to your splunk instance.
 
 You will need to configure the following:
+```
 install-logging.cmd: 
     Line 2: The splunk forwarder msi filename. 
     Line 2: RECEIVING_INDEXER= to point to your splunk instance. (Note that in order to parse/decode windows event logs, your splunk server may need to be running on windows? It's unclear if this is still a requirement for the splunk indexer to parse Windows Event Logs)
