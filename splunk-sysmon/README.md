@@ -1,6 +1,11 @@
 This directory contains files for starting a windows sandbox VM that installs the splunk universal forwarder and sysmon with Swift on Security's sysmon config (See https://github.com/SwiftOnSecurity/sysmon-config) as well as enable Powershell logging.
 The splunk forwarder is configured to forward the powershell logs and sysmon logs to your splunk instance.
 
+Download sysmon and extract it to c:\sandbox\splunk-sysmon\
+
+Download the windows 64bit universal forwarder and copy the installer to c:\sandbox\splunk-sysmon\ , making sure to update the filename in the install-logging.cmd file.
+
+
 You will need to configure the following:
 ```
 install-logging.cmd: 
