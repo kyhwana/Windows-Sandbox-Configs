@@ -1,0 +1,20 @@
+https://ghidra-sre.org/ghidra_9.1-BETA_DEV_20190923.zip
+
+OpenJDK11U-jdk_x86-32_windows_hotspot_11.0.4_11.msi /passive
+
+invoke-webrequest -uri  
+(new-object system.net.webclient).downloadfile("https://ghidra-sre.org/ghidra_9.1-BETA_DEV_20190923.zip","C:\Users\WDAGUtilityAccount\downloads\ghidra.zip")
+Expand-Archive C:\Users\WDAGUtilityAccount\downloads\ghidra.zip -DestinationPath C:\Users\WDAGUtilityAccount\downloads\
+(new-object system.net.webclient).downloadfile("https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_windows_hotspot_11.0.4_11.msi","C:\Users\WDAGUtilityAccount\downloads\jdk.msi")
+jdk.msi /passive
+
+
+
+start-job { (new-object system.net.webclient).downloadfile("https://ghidra-sre.org/ghidra_9.1-BETA_DEV_20190923.zip","C:\Users\WDAGUtilityAccount\downloads\ghidra.zip") ; Expand-Archive C:\Users\WDAGUtilityAccount\downloads\ghidra.zip -DestinationPath C:\Users\WDAGUtilityAccount\downloads\ }
+start-job { (new-object system.net.webclient).downloadfile("https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_windows_hotspot_11.0.4_11.msi","C:\Users\WDAGUtilityAccount\downloads\jdk.msi") ; C:\Users\WDAGUtilityAccount\downloads\jdk.msi /passive }
+while ($true) { get-job; sleep 1}
+
+
+Download ghidra from https://ghidra-sre.org/ and extract it to c:\sandbox\, then rename the new ghidra-<version> directory to ghidra (So you have c:\sandbox\ghidra\ directory.
+Download the  AdoptOpenJDK and copy it to c:\sandbox\jdk.msi
+Run 

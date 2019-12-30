@@ -1,0 +1,11 @@
+<Configuration>
+<MappedFolders>
+   <MappedFolder>
+     <HostFolder>C:\Sandbox</HostFolder>
+     <ReadOnly>true</ReadOnly>
+   </MappedFolder>
+</MappedFolders>
+<LogonCommand>
+    <Command>C:\Users\WDAGUtilityAccount\Desktop\Sandbox\ghidra\install.cmd</Command>
+</LogonCommand>
+</Configuration>
