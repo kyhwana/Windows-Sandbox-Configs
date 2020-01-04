@@ -13,5 +13,5 @@ powershell.exe New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Wind
 powershell.exe New-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Transcription\ -name OutputDirectory -PropertyType STRING -value "C:\Users\WDAGUtilityAccount\Documents\powershell-logs\\"
 powershell.exe New-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Transcription\ -name EnableTranscripting -value "1" -PropertyType DWORD
 powershell.exe New-ItemProperty -Path HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Transcription\ -name EnableInvocationHeader -value "1"  -PropertyType DWORD
-C:\Users\WDAGUtilityAccount\downloads\sysmon64.exe -accepteula -i C:\Users\WDAGUtilityAccount\downloads\sysmonconfig-export.xml
+C:\Users\WDAGUtilityAccount\downloads\sysmon64.exe -accepteula -n -i C:\Users\WDAGUtilityAccount\downloads\sysmonconfig-export.xml
 powershell.exe  restart-service -name SplunkForwarder
